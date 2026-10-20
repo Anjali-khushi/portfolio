@@ -19,9 +19,10 @@ const certificateDialog = document.querySelector('.certificate-dialog');
 const certificateDialogTitle = document.querySelector('#certificate-dialog-title');
 const certificateDocument = document.querySelector('.certificate-document');
 
-document.querySelectorAll('button.certificate-card').forEach(card => {
+document.querySelectorAll('button.certificate-card, .resume-preview-trigger').forEach(card => {
     card.addEventListener('click', () => {
         certificateDialogTitle.textContent = card.dataset.title;
+        certificateDocument.title = `${card.dataset.title} preview`;
         if (card.dataset.orientation) {
             certificateDialog.dataset.orientation = card.dataset.orientation;
         } else {
