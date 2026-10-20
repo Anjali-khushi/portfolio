@@ -150,6 +150,18 @@ border:2px solid white;
 color:white;
 }
 
+
+.about-section{
+    text-align:justify;
+}
+
+.about-section p{
+    margin-bottom:10px;
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+
 .container{
 width:85%;
 margin:auto;
