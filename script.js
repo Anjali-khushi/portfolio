@@ -19,9 +19,14 @@ const certificateDialog = document.querySelector('.certificate-dialog');
 const certificateDialogTitle = document.querySelector('#certificate-dialog-title');
 const certificateDocument = document.querySelector('.certificate-document');
 
-document.querySelectorAll('.certificate-card').forEach(card => {
+document.querySelectorAll('button.certificate-card').forEach(card => {
     card.addEventListener('click', () => {
         certificateDialogTitle.textContent = card.dataset.title;
+        if (card.dataset.orientation) {
+            certificateDialog.dataset.orientation = card.dataset.orientation;
+        } else {
+            delete certificateDialog.dataset.orientation;
+        }
         certificateDocument.src = `${card.dataset.certificate}#toolbar=0&navpanes=0`;
         certificateDialog.showModal();
     });
